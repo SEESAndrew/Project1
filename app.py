@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 import requests
-import spotipy
 import os
 import random
 
@@ -23,7 +22,7 @@ headers = { 'Authorization': 'Bearer {token}'.format(token=ACCESS_TK) }
 
 BASE = 'https://api.spotify.com/v1/'
 
-TRACK_ID_LIST = ['0u2P5u6lvoDfwTYjAADbn4', '1kd5qplldnxu16qcZXS3Yk', '4FHhXviyyftv946wV4I5P5', '3Wn52FjoUJClQOXwKePPp3', '0ytvsZOerGzUWfHXVT2Sgy']
+TRACK_ID_LIST = ['6i0V12jOa3mr6uu4WYhUBr', '1kd5qplldnxu16qcZXS3Yk', '4FHhXviyyftv946wV4I5P5', '3Wn52FjoUJClQOXwKePPp3', '0ytvsZOerGzUWfHXVT2Sgy']
 TRACK_ID = random.choice(TRACK_ID_LIST)
 
 @app.route('/')
