@@ -1,8 +1,6 @@
 # Project1
 In order to deploy/run: Flask, requests, os, and random are all required.
 
-# Problems/Improvements
-
   # Improvements
 Ideally there would be a much larger variety of songs to display, as well as further classification of said songs based on genre, and other features from the Spotify  API such as "danceability", "energy", etc... to give the user more information about the song. It would also be nice (If possible) for the preview to be embedded into the page, so that users could hear a slice of the song in addition to the available information.
 
