@@ -17,24 +17,36 @@ AUTH_RSP = requests.post('https://accounts.spotify.com/api/token', {
     'client_secret':CLIENT_SECRET
 })
 AUTH_RESPONSE = AUTH_RSP.json()
-
+ 
 #Formatting API requests to remove clutter and improve readability
 ACCESS_TK = AUTH_RESPONSE['access_token']
 headers = { 'Authorization': 'Bearer {token}'.format(token=ACCESS_TK) }
-BASE = 'https://api.spotify.com/v1/'
+BASE_SPT = 'https://api.spotify.com/v1/'
 
 #Chooses a random track from a list of recent favorites
-TRACK_ID_LIST = ['6i0V12jOa3mr6uu4WYhUBr', '1kd5qplldnxu16qcZXS3Yk', '4FHhXviyyftv946wV4I5P5', '3Wn52FjoUJClQOXwKePPp3', '0ytvsZOerGzUWfHXVT2Sgy']
+TRACK_ID_LIST = ['1y4jsQt7MjnZhiD1L6qFBC', '1kd5qplldnxu16qcZXS3Yk', '4FHhXviyyftv946wV4I5P5', '6ZVuGZvrViwA5uliEQ4F7Y', '0ytvsZOerGzUWfHXVT2Sgy', '3yOlyBJuViE2YSGn3nVE1K']
 TRACK_ID = random.choice(TRACK_ID_LIST)
 
 @app.route('/')
 def get_song_info():
-    r = requests.get(BASE + 'tracks/' + TRACK_ID, headers=headers)
+    r = requests.get(BASE_SPT + 'tracks/' + TRACK_ID, headers=headers)
     request = r.json()
+    genius_url = 'http://api.genius.com/search'
+    genius_header = {'Authorization': 'BEARER QW7LEM7QIeuuZlKcb4kWsy7Q9Z7ECUNKCsiRyvZNXICUi1a1758J_bDydLEOk5gx'}
+    song_title = request['name']
+    params = {'q': song_title}
+    s = requests.get(genius_url, params=params, headers=genius_header)
+    response = s.json()
+    song_lyrics_url = "No Lyrics exist"
+    for hit in response['response']['hits']:
+        if hit['result']['primary_artist']['name'].lower() == request['album']['artists'][0]['name'].lower():
+            song_lyrics_url = hit['result']['url']
+            break
+    print(song_lyrics_url)
     return render_template(
         "index.html",
         artist_name = request['album']['artists'][0]['name'],
-        song_name = request['album']['name'],
+        song_name = request['name'],
         preview_url = request['preview_url'],
         image_src = request['album']['images'][1]['url'])
 
