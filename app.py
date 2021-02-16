@@ -24,7 +24,7 @@ headers = { 'Authorization': 'Bearer {token}'.format(token=ACCESS_TK) }
 BASE_SPT = 'https://api.spotify.com/v1/'
 
 #Chooses a random track from a list of recent favorites
-TRACK_ID_LIST = ['1y4jsQt7MjnZhiD1L6qFBC', '1kd5qplldnxu16qcZXS3Yk', '4FHhXviyyftv946wV4I5P5', '6ZVuGZvrViwA5uliEQ4F7Y', '0ytvsZOerGzUWfHXVT2Sgy', '3yOlyBJuViE2YSGn3nVE1K']
+TRACK_ID_LIST = ['1y4jsQt7MjnZhiD1L6qFBC', '1kd5qplldnxu16qcZXS3Yk', '5fbSIKNisMBlP1tXxjziJb', '6ZVuGZvrViwA5uliEQ4F7Y', '0ytvsZOerGzUWfHXVT2Sgy', '3yOlyBJuViE2YSGn3nVE1K']
 TRACK_ID = random.choice(TRACK_ID_LIST)
 
 @app.route('/')
@@ -45,6 +45,7 @@ def get_song_info():
     print(song_lyrics_url)
     return render_template(
         "index.html",
+        lyric_link = song_lyrics_url,
         artist_name = request['album']['artists'][0]['name'],
         song_name = request['name'],
         preview_url = request['preview_url'],
