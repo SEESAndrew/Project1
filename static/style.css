@@ -1,0 +1,16 @@
+h1 {
+    border: 2px  blue;
+    text-align: center;
+    padding: 2px;
+    font-family: fantasy;
+}
+
+body{
+  text-align: center;
+  position: relative;
+  background-color: #fffeee;
+  font-family: 'Copperplate', fantasy;
+  border-style: solid;
+  border-width: 20px;
+  border-color: tomato mediumslateblue aquamarine salmon;
+}

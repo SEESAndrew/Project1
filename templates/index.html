@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link rel="stylesheet" href={{ url_for( 'static', filename='style.css' ) }} />
     </head>
     
     <body>
         <h1>Song Info</h1>
-        Artist Name: {{ artist_name }} <br>
-        Song Name: {{ song_name }} <br>
-        Preview URL (if available): <a href={{ preview_url }}> {{ preview_url }}</a><br>
-        Genius Lyrics URL (if available): <a href= {{ lyric_link }}> {{lyric_link}}</a><br><br><br>
+        <b>Artist Name: </b>{{ artist_name }} <br><br>
+        <b>Song Name: </b>{{ song_name }} <br><br>
+        <b>Preview URL (if available): </b><a href={{ preview_url }}> {{ preview_url }}</a><br><br>
+        <b>Genius Lyrics URL (if available): </b><a href= {{ lyric_link }}> {{lyric_link}}</a><br><br><br>
         <img src="{{ image_src }}" alt="Song Image">
     </body>
 </html>
