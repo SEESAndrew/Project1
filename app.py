@@ -46,7 +46,6 @@ def get_song_info():
         if hit['result']['primary_artist']['name'].lower() == request['album']['artists'][0]['name'].lower():
             song_lyrics_url = hit['result']['url']
             break
-    print(request)
     return render_template(
         "index.html",
         lyric_link = song_lyrics_url,
