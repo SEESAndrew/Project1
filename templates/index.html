@@ -4,12 +4,14 @@
         <link rel="stylesheet" href={{ url_for( 'static', filename='style.css' ) }} />
     </head>
     
+    <div>Get ready for a random song!</div>
+    
     <body>
         <h1>Song Info</h1>
         <b>Artist Name: </b>{{ artist_name }} <br><br>
         <b>Song Name: </b>{{ song_name }} <br><br>
         <b>Preview URL (if available): </b><a href={{ preview_url }}> {{ preview_url }}</a><br><br>
         <b>Genius Lyrics URL (if available): </b><a href= {{ lyric_link }}> {{lyric_link}}</a><br><br><br>
-        <img src="{{ image_src }}" alt="Song Image">
+        <img src="{{ image_src }}" alt="Song Image"><br><br>
     </body>
 </html>

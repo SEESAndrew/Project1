@@ -27,7 +27,7 @@ headers = { 'Authorization': 'Bearer {token}'.format(token=ACCESS_TK) }
 BASE_SPT = 'https://api.spotify.com/v1/'
 
 #Chooses a random track from a list of recent favorites
-TRACK_ID_LIST = ['1y4jsQt7MjnZhiD1L6qFBC', '1kd5qplldnxu16qcZXS3Yk', '5fbSIKNisMBlP1tXxjziJb', '6ZVuGZvrViwA5uliEQ4F7Y', '3ZYN2cfyCFn4NuWxEW9tuh', '3yOlyBJuViE2YSGn3nVE1K']
+TRACK_ID_LIST = ['1y4jsQt7MjnZhiD1L6qFBC', '1kd5qplldnxu16qcZXS3Yk', '5fbSIKNisMBlP1tXxjziJb', '6ZVuGZvrViwA5uliEQ4F7Y', '3ZYN2cfyCFn4NuWxEW9tuh', '3yOlyBJuViE2YSGn3nVE1K', '6SRWhUJcD2YKahCwHavz3X']
 TRACK_ID = random.choice(TRACK_ID_LIST)
 
 @app.route('/')

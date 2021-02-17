@@ -2,15 +2,67 @@ h1 {
     border: 2px  blue;
     text-align: center;
     padding: 2px;
-    font-family: fantasy;
+    font-family: 'Luminari', fantasy;
+}
+
+div{
+  position: absolute;
+  margin: 0 auto;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #000000;
+  color: white;
+  font-family: 'Luminari', fantasy;
+  font-weight: 900;
+  font-size: 3em;
+  text-align: center;
+  padding: 430px 0;
+  animation: fadeout 12s forwards;
+}
+
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+@keyframes bgcolor {
+    0% {
+        background-color: #fffeee
+    }
+
+    30% {
+        background-color: #cae9f5
+    }
+
+    60% {
+        background-color: #ffcccb
+    }
+
+    90% {
+        background-color: #dcedc8
+    }
+
+    100% {
+        background-color: #fed8b1
+    }
 }
 
 body{
   text-align: center;
-  position: relative;
-  background-color: #fffeee;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  padding: 80px 0;
   font-family: 'Copperplate', fantasy;
   border-style: solid;
   border-width: 20px;
-  border-color: tomato mediumslateblue aquamarine salmon;
+  border-color: tomato mediumslateblue #b19cd9 salmon;
+  -webkit-animation: bgcolor 20s infinite;
+  animation: bgcolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  
 }
